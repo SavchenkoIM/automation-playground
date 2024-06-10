@@ -9,7 +9,7 @@ import (
 
 func main() {
 
-	pool, _ := pgxpool.New(context.Background(), "postgresql://postgres:5432/postgres?user=postgres&password=postgres")
+	pool, _ := pgxpool.New(context.Background(), "postgresql://postgres:postgres@postgres/postgres?sslmode=disable")
 
 	_, err := pool.Query(context.Background(), "SELECT * from information_schema.tables")
 	if err != nil {
