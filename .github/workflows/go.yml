@@ -32,7 +32,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: List
-      run: ls -l
+      run: git config --global --add safe.directory /__w/automation-playground/automation-playground && ls -l
 
     - name: Build
       run: go build -v ./...
